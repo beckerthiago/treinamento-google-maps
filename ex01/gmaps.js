@@ -13,9 +13,7 @@ function initMap() {
 
     traffic_layer =  new google.maps.TrafficLayer();
 
-    map.addListener('zoom_changed', function () {
-        console.log('zoom ');
-    });
+    map.data.loadGeoJson('https://storage.googleapis.com/maps-devrel/google.json');
     
 }
 
