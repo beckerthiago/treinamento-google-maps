@@ -1,0 +1,39 @@
+<html>
+    <head>        
+        <title>Olá mapa</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }            
+            #map {
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" placeholder="latitude" id="lat" />
+        <input type="text" placeholder="longitude" id="lng" />
+        <select id="select_icon">
+            <option value="http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png">Verde</option>
+            <option value="http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png">Rosa</option>
+            <option value="http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png">Vermelho</option>
+        </select>
+        <button type="button" onclick="addMarker()">Adicionar</button>
+        <button type="button" onclick="removeAll()">Remove todos</button>
+
+        <select id="view" onchange="viewchange()">
+            <option value=0>Padrão</option>
+            <option value=1>Cluster</option>
+            <option value=2>Heatmap</option>
+        </select>
+
+        <div id="map"></div>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="gmaps.js"></script>        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi4dUnsRM9ZxHe1R2dxYYXp_-WeANaU7Q&callback=initMap&libraries=visualization"></script>
+    </body>
+</html>
